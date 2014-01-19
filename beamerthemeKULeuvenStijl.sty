@@ -1,0 +1,53 @@
+% Copyright 2014
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+% -----------------------------------------------------------------------------
+% Options
+% -----------------------------------------------------------------------------
+
+
+\newif\ifbeamer@sleutel
+\newif\ifbeamer@nologo
+\newif\ifbeamer@nonav
+\newif\ifbeamer@framenumber
+\newif\ifbeamer@totalframenumber
+
+
+
+% Set defaults
+\beamer@sleutelfalse
+\beamer@nologofalse
+\beamer@framenumberfalse
+\beamer@totalframenumberfalse
+\beamer@nonavfalse
+
+\DeclareOptionBeamer{sleutel}{\beamer@sleuteltrue}
+\DeclareOptionBeamer{nologo}{\beamer@nologotrue}
+\DeclareOptionBeamer{nonav}{\beamer@nonavtrue}
+\DeclareOptionBeamer{framenumber}{\beamer@framenumbertrue}
+\DeclareOptionBeamer{totalframenumber}{\beamer@totalframenumbertrue}
+
+\ProcessOptionsBeamer
+% -----------------------------------------------------------------------------
+% Dependencies
+% -----------------------------------------------------------------------------
+\RequirePackage{calc}
+\RequirePackage{etoolbox}
+
+\mode<presentation>
+
+\useinnertheme{KULeuvenStijl}
+\usefonttheme {KULeuvenStijl}
+\usecolortheme{KULeuvenStijl}
+\useoutertheme{KULeuvenStijl}
+
+\ifbeamer@nonav%
+\setbeamertemplate{navigation symbols}{}
+\fi 
+
+
+\mode<all>
