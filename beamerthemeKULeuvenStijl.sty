@@ -40,6 +40,25 @@
 
 \mode<presentation>
 
+% 
+% Prepare and load artwork
+%
+\newlength{\logo@width}
+\newlength{\sleutel@width}
+\newlength{\sleutelback@width}
+%
+\setlength{\logo@width}{2cm}
+\setlength{\sleutel@width}{2.5cm}
+\setlength{\sleutelback@width}{5cm}
+%
+\pgfdeclareimage[width=\logo@width]{KULeuvenLogo}{images/kuleuven_CMYK_logo.pdf}
+\pgfdeclareimage[width=\sleutel@width]{KULeuvenSleutel}{images/sleutel.png}
+\pgfdeclareimage[width=\sleutelback@width]{KULeuvenSleutelLicht}{images/sleutelLicht.png}
+\pgfdeclareimage[width=\sleutelback@width]{KULeuvenSleutelDonker}{images/sleutelDonker.png}
+
+%
+% Apply the themes
+%
 \useinnertheme{KULeuvenStijl}
 \usefonttheme {KULeuvenStijl}
 \usecolortheme{KULeuvenStijl}

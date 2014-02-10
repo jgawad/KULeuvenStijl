@@ -14,9 +14,6 @@
 
 \RequirePackage{tikz}
 
-\newlength{\logo@width}
-\newlength{\sleutel@width}
-\newlength{\sleutelback@width}
 \newlength{\fillout@height@fraction}
 \newlength{\fillout@height@bottom}
 
@@ -25,9 +22,6 @@
 %\newlength{\titlepage@title@xfraction}
 %\newlength{\titlepage@subtitle@xfraction}
 
-\setlength{\logo@width}{2cm}
-\setlength{\sleutel@width}{2.5cm}
-\setlength{\sleutelback@width}{5cm}
 
 % Height of paper in the upstream presentation is 19.04cm,
 % while height of the fillout is 17.3cm,  which corresponds to 0.908 ~ 0.91
@@ -38,26 +32,8 @@
 \setlength{\titlepage@titleitems@yfraction}{0.5\paperheight}
 
 
-\pgfdeclareimage[width=\logo@width]{KULeuvenLogo}{images/kuleuven_CMYK_logo.pdf}
-\pgfdeclareimage[width=\sleutel@width]{KULeuvenSleutel}{images/sleutel.png}
-\pgfdeclareimage[width=\sleutelback@width]{KULeuvenSleutelLicht}{images/sleutelLicht.png}
-\pgfdeclareimage[width=\sleutelback@width]{KULeuvenSleutelDonker}{images/sleutelDonker.png}
 
-\defbeamertemplate*{footline}{kuleuven theme footer}
-{
-\ifnumgreater{\thepage}{1}{%
-\begin{tikzpicture}
-	\useasboundingbox (0,0) rectangle(\paperwidth,0.08\paperheight);
-		\fill[KULeuvenFill] (0,0) rectangle (\paperwidth,.06\paperheight);
-		\node [anchor=east,inner sep=0,xshift=-0.03\paperwidth,yshift=0.06\paperheight] at (current page.south east) {\pgfuseimage{KULeuvenLogo}};
-	%TODO: title + author + slide number + totalslides
-\end{tikzpicture}
-}{%  on the title page
-\begin{tikzpicture}
-	\useasboundingbox (0,0) rectangle(\paperwidth,0.08\paperheight);
-\end{tikzpicture}
-}
-}
+
 
 % Title page
 \defbeamertemplate*{title page}{kuleuven title page}[1][]
